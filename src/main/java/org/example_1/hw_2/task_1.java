@@ -1,7 +1,5 @@
 package org.example_1.hw_2;
 
-import jdk.swing.interop.SwingInterOpUtils;
-
 public class task_1 {
     public static void main(String[] args) {
 
