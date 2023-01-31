@@ -1,6 +1,6 @@
 package org.example_1.hw_2;
 
-public class task_1 {
+public class Task_1 {
     public static void main(String[] args) {
 
         System.out.println("Byte" + " " + Byte.MIN_VALUE + " " + Byte.MAX_VALUE);
