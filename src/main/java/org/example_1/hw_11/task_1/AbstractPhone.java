@@ -1,5 +1,6 @@
 package org.example_1.hw_11.task_1;
 
+// нужно отформатировать код
 public abstract class AbstractPhone implements Phone{
 
     private String name;

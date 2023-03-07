@@ -18,11 +18,13 @@ public class SmartPhone extends AbstractPhone  {
 
     }
 
+    // эти методы можно и не переопределять. даже так - их не нужно переопределять без необходимости
     @Override
     public String getName() {
         return super.getName();
     }
 
+    // эти методы можно и не переопределять. даже так - их не нужно переопределять без необходимости
     @Override
     public String getModel() {
         return super.getModel();

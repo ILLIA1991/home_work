@@ -3,6 +3,7 @@ package org.example_1.hw_11.task_2;
 import org.example_1.hw_11.task_1.AbstractPhone;
 import org.example_1.hw_11.task_1.SmartPhone;
 
+// то что есть - выглядит хорошо. при возможности, попрактикуйся с другими методами класса String
 public class Pingwit {
     public static void main(String[] args) {
 
