@@ -15,6 +15,7 @@ import java.util.Locale;
 */
 public class Application {
     public static void main(String[] args) {
+        // все хорошо, только мы не использовали эти переменные.  надо или использовать, или удалить
         String data = "2023-17-01";
         String data1 = "23-2022-01";
         String data2 = "15-07-2022";
