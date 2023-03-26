@@ -2,6 +2,7 @@ package org.example_1.hw_17.Task_1;
 
 import java.io.*;
 
+// Отличный результат, по сути у меня замечаний нет, только улучшайзинг)
 public class Application {
     public static void main(String[] args) {
 
@@ -11,6 +12,7 @@ public class Application {
         motorcycle.setEngineVolume(1300);
         motorcycle.setCondition("New");
 
+        // у файла Harley не обязательно должно быть расширение txt, можно и вообще без него
         try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("src/main/java/org/example_1/hw_17/Task_1/Harley.txt"))) {
             objectOutputStream.writeObject(motorcycle);
         } catch (FileNotFoundException e) {
@@ -20,6 +22,7 @@ public class Application {
 
         }
         try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("src/main/java/org/example_1/hw_17/Task_1/Harley.txt"))) {
+            // тут можно было дать более говорящее имя переменной, например deserializedMotorcycle
             Motorcycle o = (Motorcycle)  objectInputStream.readObject();
             System.out.println(o);
 

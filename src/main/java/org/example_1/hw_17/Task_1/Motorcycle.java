@@ -25,6 +25,8 @@ public class Motorcycle implements Serializable {
         this.condition = condition;
     }
 
+    // как правило, конструкторы размещают от меньшего к большему: сначала конструктор без параметров, потом по возрастанию количесвтва параметров
+    // перемести плиз вверх его
     public Motorcycle() {
 
     }
