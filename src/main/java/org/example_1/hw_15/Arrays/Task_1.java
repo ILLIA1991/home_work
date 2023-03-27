@@ -1,4 +1,4 @@
-package trenning.Arrays;
+package org.example_1.hw_15.Arrays;
 /*
 Task 1
         Создайте массив строк {"tratata", "sea", "audi", "java", "online"}
