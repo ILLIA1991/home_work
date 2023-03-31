@@ -30,13 +30,13 @@ public class TrackDiserializetion {
             Track track3 = objectReader.readValue(bytes3);
 
             // здесь бы я хотел сделать чуть иначе:
-            // Track[] tracks = new Track[]{track, track1, track2, track3};
-            // System.out.println(Arrays.toString(tracks));
+             Track[] tracks = new Track[]{track, track1, track2, track3};
+             System.out.println(Arrays.toString(tracks));
 
             // переменные плиз именуем с маленькой буквы: trackArray. но достаточно было бы просто назвать tracks
-            String[] ArrayTracks = new String[]{String.valueOf(track), String.valueOf(track1), String.valueOf(track2), String.valueOf(track3)};
+            //String[] ArrayTracks = new String[]{String.valueOf(track), String.valueOf(track1), String.valueOf(track2), String.valueOf(track3)};
             System.out.println();
-            System.out.println(Arrays.toString(ArrayTracks));
+            System.out.println(Arrays.toString(tracks));
 
 
         } catch (IOException e) {

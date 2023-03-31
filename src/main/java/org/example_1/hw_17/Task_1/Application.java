@@ -23,8 +23,8 @@ public class Application {
         }
         try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("src/main/java/org/example_1/hw_17/Task_1/Harley.txt"))) {
             // тут можно было дать более говорящее имя переменной, например deserializedMotorcycle
-            Motorcycle o = (Motorcycle)  objectInputStream.readObject();
-            System.out.println(o);
+            Motorcycle  deserializedMotorcycle = (Motorcycle)  objectInputStream.readObject();
+            System.out.println(deserializedMotorcycle);
 
         } catch (IOException e) {
             e.printStackTrace();

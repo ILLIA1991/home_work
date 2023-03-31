@@ -17,6 +17,9 @@ public class Motorcycle implements Serializable {
 
     private int engineVolume;
     private transient String condition;
+    public Motorcycle() {
+
+    }
 
     public Motorcycle(String brand, String model, int engineVolume, String condition ) {
         this.brand = brand;
@@ -27,9 +30,6 @@ public class Motorcycle implements Serializable {
 
     // как правило, конструкторы размещают от меньшего к большему: сначала конструктор без параметров, потом по возрастанию количесвтва параметров
     // перемести плиз вверх его
-    public Motorcycle() {
-
-    }
 
     public String getBrand() {
         return brand;
