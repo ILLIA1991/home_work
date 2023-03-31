@@ -19,6 +19,7 @@ public class ListClubsExample {
         System.out.println(clubs);
 
         SortedSet<String> sortedSet = new TreeSet<>();
+        // а если клубов будет 30? плиз, переделай это, используя цикл
         sortedSet.add(footballClubs.getCountry());
         sortedSet.add(footballClubs1.getCountry());
         sortedSet.add(footballClubs2.getCountry());

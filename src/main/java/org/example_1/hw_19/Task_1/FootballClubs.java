@@ -8,6 +8,7 @@ package org.example_1.hw_19.Task_1;
 
 import java.util.Objects;
 
+// когда класс сожержит данные об одном клубе, принято его именовать в единственном числе, переименуй плиз
 public class FootballClubs {
 
     private String club;
