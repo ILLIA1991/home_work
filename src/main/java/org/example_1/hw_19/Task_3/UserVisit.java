@@ -2,12 +2,12 @@ package org.example_1.hw_19.Task_3;
 
 import java.util.Objects;
 
-public class VisWeb {
+public class UserVisit {
 
     private String user;
     private String nameWebsite;
 
-    public VisWeb(String user, String nameWebsite) {
+    public UserVisit(String user, String nameWebsite) {
         this.user = user;
         this.nameWebsite = nameWebsite;
     }
@@ -32,7 +32,7 @@ public class VisWeb {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        VisWeb that = (VisWeb) o;
+        UserVisit that = (UserVisit) o;
         return Objects.equals(user, that.user) && Objects.equals(nameWebsite, that.nameWebsite);
     }
 

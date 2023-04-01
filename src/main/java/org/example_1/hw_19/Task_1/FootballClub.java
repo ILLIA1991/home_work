@@ -1,21 +1,17 @@
 package org.example_1.hw_19.Task_1;
 
-/* Task 1
-Создайте класс для описания футбольного клуба, в нем должны содержаться название клуба, страна, и город.
-В классе Application создайте список клубов из разных стран.
-Имея этот список клубов, в консоль в алфавитном порядке их страны. Страны не должны повторяться.
- */
+
 
 import java.util.Objects;
 
 // когда класс сожержит данные об одном клубе, принято его именовать в единственном числе, переименуй плиз
-public class FootballClubs {
+public class FootballClub {
 
     private String club;
     private String country;
     private String city;
 
-    public FootballClubs(String club, String country, String city) {
+    public FootballClub(String club, String country, String city) {
         this.club = club;
         this.country = country;
         this.city = city;
@@ -49,7 +45,7 @@ public class FootballClubs {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        FootballClubs that = (FootballClubs) o;
+        FootballClub that = (FootballClub) o;
         return Objects.equals(club, that.club) && Objects.equals(country, that.country) && Objects.equals(city, that.city);
     }
 

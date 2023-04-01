@@ -8,58 +8,64 @@ package org.example_1.hw_19.Task_3;
         2.2 Напишите метод, который примет на вход список посещений и вернет коллекцию уникальных сайтов.
         2.3 напишите метод, который примет на вход список посещений и вернет Map<String, Integer> в которой хранится количество посещений
  */
+
 import java.util.*;
 
 public class ListVisitorsExample {
     public static void main(String[] args) {
 
-        VisWeb visWeb = new VisWeb("Vojtek", "media-expert.pl");
-        VisWeb visWeb1 = new VisWeb("Vojtek", "media-expert.pl");
-        VisWeb visWeb2 = new VisWeb("Vojtek", "media-market.pl");
-        VisWeb visWeb3 = new VisWeb("Grzegorz", "YouTube");
-        VisWeb visWeb4 = new VisWeb("Jakub", "onliner.by");
-        VisWeb visWeb5 = new VisWeb("Krzyshtof", "kinogo.com");
-        VisWeb visWeb6 = new VisWeb("Vacek", "Facebook");
+        UserVisit userVisit = new UserVisit("Vojtek", "media-expert.pl");
+        UserVisit userVisit1 = new UserVisit("Vojtek", "media-expert.pl");
+        UserVisit userVisit2 = new UserVisit("Vojtek", "media-market.pl");
+        UserVisit userVisit3 = new UserVisit("Grzegorz", "YouTube");
+        UserVisit userVisit4 = new UserVisit("Jakub", "onliner.by");
+        UserVisit userVisit5 = new UserVisit("Krzyshtof", "kinogo.com");
+        UserVisit userVisit6 = new UserVisit("Vacek", "Facebook");
+        List<UserVisit> userVisits = new ArrayList<>(List.of(userVisit, userVisit1, userVisit2, userVisit3, userVisit4, userVisit5, userVisit6));
 
-        HashMap<String, String> Website = new HashMap<>();
+        Set<String> userNames = findUniqueUsers(userVisits);
+        System.out.println("Пользователи системы:" + userNames);
 
-        Website.put(visWeb.getUser(), visWeb.getNameWebsite());
-        Website.put(visWeb1.getUser(), visWeb1.getNameWebsite());
-        Website.put(visWeb2.getUser(), visWeb2.getNameWebsite());
-        Website.put(visWeb3.getUser(), visWeb3.getNameWebsite());
-        Website.put(visWeb4.getUser(), visWeb4.getNameWebsite());
-        Website.put(visWeb5.getUser(), visWeb5.getNameWebsite());
-        Website.put(visWeb6.getUser(), visWeb6.getNameWebsite());
+        Set<String> sites = findUniqueSites(userVisits);
+        System.out.println("Сайты:" + sites );
 
-        Set<String> keys = Website.keySet();
-        System.out.println("Уникальные Имена" + keys);
+        Map<String, Integer> visitsCountForSite = calculateSiteVisitCount(userVisits);
+        System.out.println(" Количество посещения одного сайта:" + visitsCountForSite);
+    }
 
-        ArrayList<String> values = new ArrayList<>(Website.values());
-        System.out.println("Уникальные Сайты" + values);
+    private static Map<String, Integer> calculateSiteVisitCount(List<UserVisit> userVisits) {
+        Map<String, Integer> result = new HashMap<>();
 
-        HashMap<VisWeb, Integer> visitUser = new HashMap<>();
+        for (UserVisit userVisit : userVisits ) {
+            String siteName = userVisit.getNameWebsite();
 
-        visitUser.put(visWeb, 2);
-        visitUser.put(visWeb1, 3);
-        visitUser.put(visWeb2, 4);
-        visitUser.put(visWeb3, 7);
-        visitUser.put(visWeb4, 12);
-        visitUser.put(visWeb5, 34);
-        visitUser.put(visWeb6, 13);
+            if(result.containsKey(siteName)) {
+                Integer visitsCount = result.get(siteName);
+                Integer updatedCount = visitsCount + 1;
+                result.put(siteName , updatedCount);
+            } else {
+                result.put(siteName, 1);
+            }
+        }
 
-        System.out.println("HashMap:\n" + visitUser);
+        return result;
+    }
 
+    private static Set<String> findUniqueSites(List<UserVisit> userVisits) {
+        Set<String> sites = new HashSet<>();
 
+        for (UserVisit userVisit : userVisits) {
+            sites.add(userVisit.getNameWebsite());
+        }
+        return sites;
+    }
 
+    private static Set<String> findUniqueUsers(List<UserVisit> userVisits) {
+        Set<String> result = new HashSet<>();
 
-
-
-
-
-
-
-
-
-
+        for(UserVisit userVisit : userVisits) {
+            result.add(userVisit.getUser());
+        }
+        return result;
     }
 }
