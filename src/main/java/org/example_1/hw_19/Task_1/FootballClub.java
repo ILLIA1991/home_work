@@ -56,7 +56,7 @@ public class FootballClub {
 
     @Override
     public String toString() {
-        return "FootballClubs{" +
+        return "FootballClub{" +
                 "club='" + club + '\'' +
                 ", country='" + country + '\'' +
                 ", city='" + city + '\'' +
