@@ -11,24 +11,39 @@ import java.util.*;
 public class ListClubsExample {
     public static void main(String[] args) {
 
-        FootballClub footballClub = new FootballClub("Barcelona", "Spain", "Barcelona");
-        FootballClub footballClub1 = new FootballClub("Porto", "Portugal", "Porto");
-        FootballClub footballClub2 = new FootballClub("Chelsea", "England", "London");
-        FootballClub footballClub3 = new FootballClub("Dynamo", "Belarus", "Minsk");
+        FootballClub footballClub = new FootballClub("Dynamo", "Belarus", "Minsk");
+        FootballClub footballClub1 = new FootballClub("Barcelona", "Spain", "Barcelona");
+        FootballClub footballClub2 = new FootballClub("Porto", "Portugal", "Porto");
+        FootballClub footballClub3 = new FootballClub("Chelsea", "England", "London");
         List<FootballClub> clubArrayList = new ArrayList<>(List.of(footballClub, footballClub1, footballClub2, footballClub3));
+
+        Set<String> countrys = findUniqueCountrys(clubArrayList);
+        System.out.println("Страны;" + countrys);
+    }
+    private static Set<String> findUniqueCountrys(List<FootballClub> clubArrayList) {
+        Set<String> countryClub = new TreeSet<>();
+
+        for (FootballClub footballClub : clubArrayList) {
+           countryClub.add(footballClub.getCountry());
+        }
+        return countryClub;
+
+
+    }
+
         // Так как нам нужны только страны, использовать Map здесь избыточно и было бы достаточно использовать Set
         // это также упростило бы код
         // попробуй переписать на Set
-        Map<String, List<FootballClub>> clubsByCountry = new HashMap<>();
+        /*Map<String, List<FootballClub>> clubsByCountry = new HashMap<>();
 
-        // здесь переменную нужно именовать в единственном числе, не clubs, а club
-        for (FootballClub clubs : clubArrayList ) {
-            String country = clubs.getCountry();
+
+        for (FootballClub club : clubArrayList ) {
+            String country = club.getCountry();
             if (clubsByCountry.containsKey(country)) {
                 List<FootballClub> clubList = clubsByCountry.get(country);
-                clubList.add(clubs);
+                clubList.add(club);
             } else {
-                clubsByCountry.put(country, new ArrayList<>(List.of(clubs)));
+                clubsByCountry.put(country, new ArrayList<>(List.of(club)));
             }
 
         }
@@ -36,5 +51,5 @@ public class ListClubsExample {
             System.out.println(stringListEntry.getKey());
         }
 
-    }
+         */
 }
