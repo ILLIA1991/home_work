@@ -10,6 +10,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
+// ну все получилось!
 public class ReflectionHomework {
 
     public static void main(String[] args) throws InvocationTargetException, InstantiationException, IllegalAccessException {
