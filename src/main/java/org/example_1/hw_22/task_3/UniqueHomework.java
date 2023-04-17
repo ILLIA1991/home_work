@@ -15,6 +15,7 @@ public class UniqueHomework {
         AutoInfo autoInfo6 = new AutoInfo("Toyota", "Tundra", 6, 3.7f);
         AutoInfo autoInfo7 = new AutoInfo("Audi", "A8", 8, 4.0f);
 
+        // тут решение неправильное, надо еще поразбираться
         List<AutoInfo> autoInfos = new ArrayList<>(List.of(autoInfo1, autoInfo2, autoInfo3, autoInfo4, autoInfo5, autoInfo6, autoInfo7));
         Collections.sort(autoInfos);
         for(AutoInfo autoInfo : autoInfos) {
