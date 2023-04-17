@@ -1,15 +1,14 @@
-package org.example_1.hw_17.Task_3;
+package org.example_1.hw_12.hw_17.Task_3;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectReader;
-import org.example_1.hw_17.Task_2.Track;
+import org.example_1.hw_12.hw_17.Task_2.Track;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Arrays;
 
 // я хочу видеть более говорящее название класса
 public class Application {

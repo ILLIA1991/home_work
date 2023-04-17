@@ -1,7 +1,7 @@
-package org.example_1.hw_17.Task_3;
+package org.example_1.hw_12.hw_17.Task_3;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example_1.hw_17.Task_2.Track;
+import org.example_1.hw_12.hw_17.Task_2.Track;
 
 import java.io.File;
 import java.io.IOException;

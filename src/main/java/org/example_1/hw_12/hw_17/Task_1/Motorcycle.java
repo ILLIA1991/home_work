@@ -1,4 +1,4 @@
-package org.example_1.hw_17.Task_1;
+package org.example_1.hw_12.hw_17.Task_1;
 
 /* Task 1
         Создайте класс Motorcycle, в котором должны быть поля brand, model, engineVolume (объем двигателя в см3),
