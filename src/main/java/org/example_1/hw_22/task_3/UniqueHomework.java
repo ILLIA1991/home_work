@@ -2,6 +2,7 @@ package org.example_1.hw_22.task_3;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class UniqueHomework {
@@ -30,8 +31,7 @@ public class UniqueHomework {
         }
 
 
-
         // напишите метод, который примет autoInfos и вернет коллекцию марок, упорядоченных по алфавиту. какая это будет коллекция - решите сами
-            // напишите метод, который примет autoInfos и вернет коллекцию моделей, упорядоченных по алфавиту. какая это будет коллекция - решите сами
+        // напишите метод, который примет autoInfos и вернет коллекцию моделей, упорядоченных по алфавиту. какая это будет коллекция - решите сами
     }
 }
