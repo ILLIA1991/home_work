@@ -15,12 +15,14 @@ public class UserReverse {
         System.out.println(users);
         System.out.println();
 
+        // этот компаратор всегда возвращает 0, это значит что юзеры по его мнению равны
         Collections.sort(users, new Comparator< User >() {
             @Override
             public int compare(User o1, User o2) {
                 return 0;
             }
         });
+        // здесь сортировка норм
         Collections.sort(users, (o1, o2) -> (o2.getName().compareTo(o1.getName())));
         System.out.println("Обратный порядок => " + users);
 

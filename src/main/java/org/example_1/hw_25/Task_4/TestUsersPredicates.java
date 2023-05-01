@@ -14,6 +14,7 @@ import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 
+// Все хорошо
 public class TestUsersPredicates {
 
     public static void main(String[] args) {
