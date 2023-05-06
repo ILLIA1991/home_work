@@ -12,12 +12,10 @@ import org.example_1.hw_27.Task_1.Abonent;
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.time.chrono.ChronoLocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class StatisticsAbonent {
     public static void main(String[] args) {
@@ -37,9 +35,11 @@ public class StatisticsAbonent {
                 LocalDate.of(1989, 2, 20),
                 LocalDate.of(2001, 12, 5));
 
+        // тут надо пройти по списку абонентов и взять даты у них
         IntSummaryStatistics stats = dates.stream()
                 .mapToInt(date -> Period.between(date, LocalDate.now()).getYears()).summaryStatistics();
 
+        // и нужно вынести в метод, который вернет строку со всем этим
         System.out.printf("Number of subscribers: %d%n", stats.getCount());
         System.out.printf("Max age: %d%n", stats.getMax());
         System.out.printf("Min age: %d%n", stats.getMin());
@@ -54,14 +54,13 @@ public class StatisticsAbonent {
                 LocalDate.of(2021, 5, 5));
 
 
+        // см комент выше
         IntSummaryStatistics stats1 = contractDates.stream()
                 .mapToInt(localDate -> Period.between(localDate, LocalDate.now()).getYears()).summaryStatistics();
 
         System.out.printf("Number of subscribers VIP: %d%n", stats1.getCount());
         System.out.printf("Max contract: %d%n", stats1.getMax());
         System.out.printf("Average contract: %.2f%n", stats1.getAverage());
-
-
 
 
     }

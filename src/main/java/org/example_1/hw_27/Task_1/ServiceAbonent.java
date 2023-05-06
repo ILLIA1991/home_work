@@ -14,6 +14,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.*;
 
+// все три таски надо разделить на два класса: сервис + application.
 public class ServiceAbonent {
     public static void main(String[] args) {
         List<Abonent> abonents = new ArrayList<>(List.of(
@@ -26,26 +27,29 @@ public class ServiceAbonent {
 
         LocalDate date =  LocalDate.of(2023,05,06 );
 
+        // тут суть правильна, но вынеси плиз в private метод
         boolean any = abonents.stream()
                 .anyMatch(Abonent::getVip);
         System.out.println(any);
 
 
-
+        // тут суть правильна, но вынеси плиз в private метод
         boolean all = abonents.stream()
                 .allMatch(abonent -> abonent.getContractDate().isBefore(date));
         System.out.println(all);
 
+        // вынеси плиз в private метод, который примет список и город
         Optional<Abonent> abonentFromCity = abonents.stream()
                 .filter(abonent1 -> abonent1.getCity().equals("Wroclaw"))
                 .findAny();
 
+        // весь код далее можно заменить одной этой строкой + вынеси плиз в private метод
+        // Abonent abonent = abonentFromCity.orElseThrow(() -> new IllegalArgumentException("Это не наш клиент"));
         if (abonentFromCity.isPresent()) {
             System.out.println(abonentFromCity.get());
         } else {
             Abonent abonent = abonentFromCity.orElseThrow(() -> new IllegalArgumentException("Это не наш клиент"));
             System.out.println(abonent);
-
         }
 
 

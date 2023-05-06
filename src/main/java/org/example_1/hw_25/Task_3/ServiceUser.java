@@ -7,11 +7,5 @@ public class ServiceUser {
         User user = userName.create("Илья");
         System.out.println(user);
     }
-
-
 }
 
-// вынесите этот интерфейс в отдельный файл и пометьте его нужной аннотацией
-interface UserName {
-    User create(String name);
-}

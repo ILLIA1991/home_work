@@ -29,6 +29,7 @@ public class Subscribers {
                 new Abonent("Jack", "Jakovich", "1238", LocalDate.of(1989, 2, 20), LocalDate.of(2023, 05, 05), false, "Warshawa"),
                 new Abonent("Sveta", "Svetovich", "1239", LocalDate.of(2001, 12, 5), LocalDate.of(2022, 05, 05), false, "Wroclaw")));
 
+        // плиз вынеси в private методы
         Map<String, Abonent> stringAbonentMap = abonentList.stream()
                 .filter(abonent -> !abonent.getVip())
                 .collect(toMap(Abonent::getContractId, Function.identity()));
