@@ -6,7 +6,7 @@ public class FunctionConverting {
 
     public static void main(String[] args) {
         // здесь вызывать String.valueOf(x) не нужно, достаточно было бы x -> x + "dollars"
-        Function<Integer, String> converting = x -> String.valueOf(x) + "dollars";
+        Function<Integer, String> converting = x -> (x) + "dollars";
         System.out.println(converting.apply(5));
     }
 }
