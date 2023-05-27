@@ -13,7 +13,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Function;
 
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toMap;
@@ -29,11 +28,11 @@ public class Application {
                 new Abonent("Jack", "Jakovich", "1238", LocalDate.of(1989, 2, 20), LocalDate.of(2023, 05, 05), false, "Warshawa"),
                 new Abonent("Sveta", "Svetovich", "1239", LocalDate.of(2001, 12, 5), LocalDate.of(2022, 05, 05), false, "Wroclaw")));
 
-        Map<String, Abonent> noVip = serviceAbonent.abonentMap(abonents);
+        Map<String, Abonent> noVip = serviceAbonent.mapNonVipAbonentsByContract(abonents);
         System.out.println(noVip);
         System.out.println();
 
-        Map<String, List<Abonent>> groupingCity = serviceAbonent.abonentGroupingMap(abonents);
+        Map<String, List<Abonent>> groupingCity = serviceAbonent.groupByCity(abonents);
         System.out.println(groupingCity);
 
 

@@ -25,13 +25,13 @@ public class Application {
 
 
 
-        boolean vip = serviceAbonent.anyAbonents(abonents);
+        boolean vip = serviceAbonent.isAnyVipAbonentsFromCity(abonents, "Warshawa");
         System.out.println(vip);
 
-        boolean dateConnect = serviceAbonent.allAbonents(abonents);
+        boolean dateConnect = serviceAbonent.isAllAbonentsContractBefore(abonents, LocalDate.of(2024,5,5));
         System.out.println(dateConnect);
 
-        Optional<Abonent> anyAbonent = serviceAbonent.abonentFromCity(abonents, "Warshawa");
+        Abonent anyAbonent = serviceAbonent.findAnyAbonentFromCity(abonents, "Warshawa");
         System.out.println(anyAbonent);
 
 

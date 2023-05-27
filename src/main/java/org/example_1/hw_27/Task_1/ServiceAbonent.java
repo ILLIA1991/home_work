@@ -6,26 +6,26 @@ import java.util.Optional;
 
 public class ServiceAbonent {
 
-    public boolean anyAbonents (List<Abonent> abonents) {
+    public boolean isAnyVipAbonentsFromCity(List<Abonent> abonents, String city) {
         boolean any = abonents.stream()
+                .filter(abonent -> abonent.getCity().equals(city))
                 .anyMatch(Abonent::getVip);
 
         return any;
 
     }
-    public boolean allAbonents (List<Abonent> abonents) {
-        LocalDate date =  LocalDate.now();
+    public boolean isAllAbonentsContractBefore(List<Abonent> abonents, LocalDate date) {
         boolean all = abonents.stream()
                 .allMatch(abonent -> abonent.getContractDate().isBefore(date));
         return all;
     }
 
-    public Optional<Abonent> abonentFromCity (List<Abonent> abonents, String city) {
+    public Abonent findAnyAbonentFromCity(List<Abonent> abonents, String city) {
         Optional<Abonent> abonentCity = abonents.stream()
                 .filter(abonent1 -> abonent1.getCity().equals("Warshawa"))
                 .findAny();
         Abonent abonent = abonentCity.orElseThrow(() -> new IllegalArgumentException("Это не наш клиент"));
-        return abonentCity;
+        return abonent;
     }
 
 
