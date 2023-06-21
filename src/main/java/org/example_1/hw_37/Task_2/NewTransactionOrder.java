@@ -13,6 +13,7 @@ public class NewTransactionOrder {
         CreatingNewOrderInTransaction();
     }
 
+    // параметризация NewTransactionorders здесь не нужен
     public static <NewTransactionorders> void CreatingNewOrderInTransaction() {
 
         try {
@@ -40,12 +41,14 @@ public class NewTransactionOrder {
 
 
 
+            // переменную предлагаю переименовать
             List<TransactionRecord> transactionList = new ArrayList<>();
             transactionList.add(transactionRecord);
             transactionList.add(transactionRecord1);
             transactionList.add(transactionRecord2);
 
 
+            // переменную рекомендую переименовать, это будет orderItem
             for(TransactionRecord transactionRecordLoop : transactionList) {
                 orderItemStatement.setInt(1, transactionRecord.id());
                 orderItemStatement.setInt(2, transactionRecord.order_id());
@@ -55,6 +58,7 @@ public class NewTransactionOrder {
                 System.out.println(transactionRecordLoop);
             }
 
+            // супер, batch - это эффективно
             orderItemStatement.executeBatch();
             connection.commit();
 
