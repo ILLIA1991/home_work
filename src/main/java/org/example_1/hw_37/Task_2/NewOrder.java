@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NewTransactionOrder {
+public class NewOrder {
     private static final String URL = "jdbc:postgresql://localhost:5432/hw_35";
     private static final String USERNAME = "pingwit";
     private static final String PASSWORD = "pingwit_password";
@@ -14,7 +14,7 @@ public class NewTransactionOrder {
     }
 
     // параметризация NewTransactionorders здесь не нужен
-    public static <NewTransactionorders> void CreatingNewOrderInTransaction() {
+    public static void CreatingNewOrderInTransaction() {
 
         try {
             Class.forName("org.postgresql.Driver");
@@ -32,34 +32,34 @@ public class NewTransactionOrder {
             orderStatement.setString(5, "New order");
             orderStatement.executeUpdate();
 
-            TransactionRecord transactionRecord = new TransactionRecord(19, 21, 101, 8);
-            TransactionRecord transactionRecord1 = new TransactionRecord(38, 21, 111, 6);
-            TransactionRecord transactionRecord2 = new TransactionRecord(56, 21, 121, 4);
+            OrderItem orderItem3 = new OrderItem(19, 21, 101, 8);
+            OrderItem orderItem1 = new OrderItem(38, 21, 111, 6);
+            OrderItem orderItem2 = new OrderItem(56, 21, 121, 4);
 
             String insertOrderItemQuery = "INSERT INTO order_items (id, order_id, product_id, quantity) VALUES (?, ?, ?, ?)";
-            PreparedStatement orderItemStatement = connection.prepareStatement(insertOrderItemQuery);
+            PreparedStatement orderItem = connection.prepareStatement(insertOrderItemQuery);
 
 
 
             // переменную предлагаю переименовать
-            List<TransactionRecord> transactionList = new ArrayList<>();
-            transactionList.add(transactionRecord);
-            transactionList.add(transactionRecord1);
-            transactionList.add(transactionRecord2);
+            List<OrderItem> transactionOrders = new ArrayList<>();
+            transactionOrders.add(orderItem3);
+            transactionOrders.add(orderItem1);
+            transactionOrders.add(orderItem2);
 
 
             // переменную рекомендую переименовать, это будет orderItem
-            for(TransactionRecord transactionRecordLoop : transactionList) {
-                orderItemStatement.setInt(1, transactionRecord.id());
-                orderItemStatement.setInt(2, transactionRecord.order_id());
-                orderItemStatement.setInt(3, transactionRecord.product_id());
-                orderItemStatement.setInt(4, transactionRecord.quantity());
-                orderItemStatement.addBatch();
-                System.out.println(transactionRecordLoop);
+            for(OrderItem orderItemLoop : transactionOrders) {
+                orderItem.setInt(1, orderItem3.id());
+                orderItem.setInt(2, orderItem3.order_id());
+                orderItem.setInt(3, orderItem3.product_id());
+                orderItem.setInt(4, orderItem3.quantity());
+                orderItem.addBatch();
+                System.out.println(orderItemLoop);
             }
 
             // супер, batch - это эффективно
-            orderItemStatement.executeBatch();
+            orderItem.executeBatch();
             connection.commit();
 
             System.out.println("Транзакция успешно завершена.");
