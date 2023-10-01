@@ -16,15 +16,15 @@ public class PersonExample {
             }
         };
 
-        Person person1 = new Person("Krazek", 95);
-        Person person2 = new Person("Brzezek", 101);
+        Person person1 = new Person("Krazek ", 95);
+        Person person2 = new Person("Brzezek ", 101);
 
         int result = nameAndAgeComparator.compare(person1, person2);
 
         if(result == 0) {
             System.out.println("Обьекты равны");
         } else {
-            System.out.println("Обьекты не равны");
+            System.out.println("Обьекты  не равны");
         }
     }
 }
